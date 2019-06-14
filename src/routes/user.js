@@ -43,10 +43,6 @@ router.get('/user',(req,res)=>{
 
 //read user by interest 'coding'
 router.get('/user/coding',(req,res)=>{
-    // const intr=req.query.interest
-    // if(!intr){
-    //     return res.status(400).send('Missing URL parameter : interest')
-    // }
     User.find({ interests:{$in: ['coding']} })
     .then(user =>{
         if(!user){
